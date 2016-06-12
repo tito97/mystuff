@@ -1,4 +1,7 @@
-# mystuff
+# Mystuff
+## About
+This is a space for some useful (or not) codes
 
 ## Table of contents
- 1 - weather [bash function to see the current weather at some location]
+ * bash
+   * weather - see the current weather in the terminal 
