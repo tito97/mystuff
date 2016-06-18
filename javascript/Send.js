@@ -1,20 +1,30 @@
 /**
- * Send.js is a javascript api to help using XMLHttpRequest
- * in a very simple way.
+ * Send.js is an object to make the use of XMLHttpRequest easier.
  * 
- * Download this file to your javascript files directory
+ * > Send
+ * Object {}
+ * 	Request : (method, url, callback[, progress])
+ *	setForm : (formElement, callback[, progress])
+ *	setOnclick : (element, method, url, callback)
  * 
- * To create a XMLHttpRequest:
- * new Send.Request(method,url,callback,progress)
- *  where method and url are strings
- *  callback is a function with two paremeters ( the response text and
- *  and the state of the server)
- *
- * To submit forms use:
- * Send.setForm( formElement, callback, progress )
- *  where formElement is the form DOM Element
- *  the callback is a function with two paremeters (see callback from Send.Reques)
- *  progress is a function to watch the upload progress and receives a perameter Evente
+ * Usage:
+ * 	var request = new Send.Request("GET","/",function(response, status){...}, function(e){...})
+ * 	request.send( formData )
+ * 
+ * 		The callback function will be called when the XMLHttpRequest readyState == 4
+ * 			The parameters are the responseText and status
+ * 		While XMLHttpRequest.upload.onprogress(e) the progress function is called
+ * 
+ * 
+ * 	setForm(formElement, function(response, status){...}, function(e){...})
+ * 		
+ * 		Make sure that formElement.method and formElement.action are defined;
+ * 		calls the XMLHttpRequest.send when formElement is submited
+ * 		when after calling the callback resets the formElement
+ * 		
+ * 	setOnclick(element, method, url, function(response, status){...})
+ * 		
+ * 		Creates a reuest and sends it when the element is clicked
  * 
  * Diogo Almiro 2016
  */
