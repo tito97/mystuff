@@ -48,7 +48,8 @@ var Send = (function(){
 	
 	var Send = {};
 	Send.setForm = function(formElement, callback, progress){
-		var request = new Request(
+		formElement.onsubmit = function() {
+			 new Request(
 				formElement.method,
 				formElement.action,
 				function(res, status){
@@ -56,9 +57,7 @@ var Send = (function(){
 					formElement.reset();
 				},
 				progress
-			);
-		formElement.onsubmit = function() {
-			request.send(new FormData(this));
+			).send(new FormData(this));
 			return false;
 		}
 	}
