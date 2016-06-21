@@ -1,6 +1,6 @@
 # Mystuff
 ## About
-This is a space for some useful (or not) codes
+This is a space for some useful codes (or not).
 
 ## Table of contents
  * [bash](bash)
