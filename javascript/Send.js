@@ -24,7 +24,7 @@
  * 		
  * 	setOnclick(element, method, url, function(response, status){...})
  * 		
- * 		Creates a reuest and sends it when the element is clicked
+ * 		Creates a request and sends it when the element is clicked
  * 
  * Diogo Almiro 2016
  */
